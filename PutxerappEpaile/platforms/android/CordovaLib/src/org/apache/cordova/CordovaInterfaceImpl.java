@@ -223,21 +223,18 @@ public class CordovaInterfaceImpl implements CordovaInterface {
         }
     }
 
-    @Override
     public void requestPermission(CordovaPlugin plugin, int requestCode, String permission) {
         String[] permissions = new String [1];
         permissions[0] = permission;
         requestPermissions(plugin, requestCode, permissions);
     }
 
-    @SuppressLint("NewApi")
-    @Override
+        @SuppressLint("NewApi")
     public void requestPermissions(CordovaPlugin plugin, int requestCode, String [] permissions) {
         int mappedRequestCode = permissionResultCallbacks.registerCallback(plugin, requestCode);
         getActivity().requestPermissions(permissions, mappedRequestCode);
     }
 
-    @Override
     public boolean hasPermission(String permission)
     {
         return PackageManager.PERMISSION_GRANTED == activity.checkSelfPermission(permission);

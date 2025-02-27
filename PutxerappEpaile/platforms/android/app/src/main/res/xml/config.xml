@@ -6,17 +6,8 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
+    <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-navigation href="data:*" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="Orientation" value="default" />
-    <preference name="Fullscreen" value="true" />
-    <preference name="WebViewBounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="AllowInlineMediaPlayback" value="true" />
-    <preference name="MediaPlaybackRequiresUserAction" value="false" />
-    <preference name="AllowUniversalAccessFromFileURLs" value="true" />
-    <preference name="AllowFileAccessFromFileURLs" value="true" />
 </widget>

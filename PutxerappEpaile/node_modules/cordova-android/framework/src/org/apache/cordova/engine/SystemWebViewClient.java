@@ -29,8 +29,6 @@ import android.webkit.ClientCertRequest;
 import android.webkit.HttpAuthHandler;
 import android.webkit.MimeTypeMap;
 import android.webkit.RenderProcessGoneDetail;
-import android.webkit.ServiceWorkerClient;
-import android.webkit.ServiceWorkerController;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
@@ -118,18 +116,6 @@ public class SystemWebViewClient extends WebViewClient {
         });
 
         this.assetLoader = assetLoaderBuilder.build();
-        boolean setAsServiceWorkerClient = parentEngine.preferences.getBoolean("ResolveServiceWorkerRequests", true);
-        ServiceWorkerController controller = null;
-
-        if (setAsServiceWorkerClient) {
-            controller = ServiceWorkerController.getInstance();
-            controller.setServiceWorkerClient(new ServiceWorkerClient(){
-                @Override
-                public WebResourceResponse shouldInterceptRequest(WebResourceRequest request) {
-                    return assetLoader.shouldInterceptRequest(request.getUrl());
-                }
-            });
-        }
     }
 
     /**
