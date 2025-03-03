@@ -1,4 +1,4 @@
-const API_URL = 'http://192.168.137.1:3001'
+import {API_URL} from "./konstanteak.js";
 import * as konstanteak from "./konstanteak.js";
 import {autentifikatu} from './user.js';
 import {getEpailearenEpaimahaiak} from './epaimahaikidea.js';
